@@ -6,9 +6,9 @@ const port = 3000;
 app.use(bodyParser.json({ type: 'application/json' }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const folderFileParser = require('./mbr');
+const improvedRouter = require('./improved-router');
 
-app.use(folderFileParser.getRoutes('./api'));
+app.use(improvedRouter.getRoutes('./api'));
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`)
