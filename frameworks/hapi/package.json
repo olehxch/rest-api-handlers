@@ -1,0 +1,26 @@
+{
+  "name": "hapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Oleh Chaplia",
+  "license": "Proprietary",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "lint": "node ./node_modules/eslint/bin/eslint ./app/**/*.js --color",
+    "prettier-check": "npx prettier --check ./app",
+    "prettier-write": "npx prettier --write ./app",
+    "circular": "madge --circular ./app",
+    "dep": "npx depcruise app --output-type dot | dot -T svg > ./assets/depgraph.svg",
+    "loc": "npx cloc app"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^21.3.3"
+  },
+  "devDependencies": {
+    "code-complexity": "^4.4.4",
+    "dependency-cruiser": "^16.2.0",
+    "madge": "^6.1.0"
+  }
+}

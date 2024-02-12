@@ -1,0 +1,26 @@
+config:
+  target: http://localhost:3000
+  phases:
+    - duration: 30
+      arrivalRate: 10
+      name: API Check
+  plugins:
+    metrics-by-endpoint: {}
+scenarios:
+  - flow:
+      - get:
+          url: "/satellites"
+      - post:
+          url: "/satellites"
+      - get:
+          url: "/satellites/123"
+      - put:
+          url: "/satellites/123"
+      - put:
+          url: "/satellites/123"
+      - delete:
+          url: "/satellites/123"
+      - get:
+          url: "/satellites/123/details"
+      - get:
+          url: "/satellites/123/details/456"

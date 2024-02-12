@@ -1,0 +1,10 @@
+{
+	"backgroundColor": "#FFFFFF",
+  "noDependencyColor": "#757574",
+  "nodeColor": "#757574",
+  "cyclicNodeColor": "757574",
+  "rankdir": "LR",
+  "fontSize": "22px",
+  "layout": "dot",
+  "includeNpm": true
+}
