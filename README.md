@@ -14,7 +14,7 @@ The project structure contains:
 * **frameworks** - this folder contains the source code of the five services with their native routing methods implemented for comparison purposes (Express.js, Koa, Hapi.js, Next.js, Nest.js)
 * **proposed-approach** - this folder contains the source code of the proposed approach described in the research paper
 
-### How to run a author's proposed approach
+### How to run an author's proposed approach
 
 Open terminal in the folder `/proposed-approach` folder and run `npm start`. After a successful start a text `Server listening on port 3000` should appear in the console. 
 
