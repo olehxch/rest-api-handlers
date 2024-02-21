@@ -1,18 +1,18 @@
-# Organizing APIs With File-Path-Method Routing for RESTful Node.js Microservices
+# The Effective Organization of REST API Handlers for Node.js Microservices
 
 ## Introduction
 
-This repository contains source code for the research titled "Organizing APIs With File-Path-Method Routing for RESTful Node.js Microservices".
+This repository contains source code for the research titled "The Effective Organization of REST API Handlers for Node.js Microservices".
 
 ## Files
 ### Project Structure
 
 The project structure contains:
 
-* **api-testing** - this folder contains the source code of the application to test API routes and their performance
-* **assets** - folder with additional images and files
-* **frameworks** - this folder contains the source code of the five services with their native routing methods implemented for comparison purposes (Express.js, Koa, Hapi.js, Next.js, Nest.js)
-* **proposed-approach** - this folder contains the source code of the proposed approach described in the research paper
+* **[api-testing](https://github.com/olehxch/rest-api-handlers/tree/master/proposed-approach)** - this folder contains the source code of the application to test API routes and their performance
+* **[assets](https://github.com/olehxch/rest-api-handlers/tree/master/assets)** - folder with additional images and files
+* **[frameworks](https://github.com/olehxch/rest-api-handlers/tree/master/frameworks)** - this folder contains the source code of the five services with their native routing methods implemented for comparison purposes (Express.js, Koa, Hapi.js, Next.js, Nest.js)
+* **[proposed-approach](https://github.com/olehxch/rest-api-handlers/tree/master/proposed-approach)** - this folder contains the source code of the proposed approach described in the research paper
 
 ### How to run an author's proposed approach
 
