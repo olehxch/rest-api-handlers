@@ -12,4 +12,4 @@ app.use(improvedRouter.getRoutes('./api'));
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`)
-})
+});

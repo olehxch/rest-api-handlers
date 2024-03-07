@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const router = require('express').Router({ mergeParams: true });
 
-class FolderFileParser {
+class APIRouter {
   init(rootDir) {
     this.rootDir = path.join(__dirname, rootDir);
     this.routes = [];
@@ -100,4 +100,4 @@ class FolderFileParser {
   }
 }
 
-module.exports = new FolderFileParser();
+module.exports = new APIRouter();
