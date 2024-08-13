@@ -1,8 +1,8 @@
-# The Effective Organization of REST API Handlers for Node.js Microservices
+# Enhancing REST API Handlers Organization for Node.js Microservices
 
 ## Introduction
 
-This repository contains source code for the research titled "The Effective Organization of REST API Handlers for Node.js Microservices".
+This repository contains source code for the research titled "Enhancing REST API Handlers Organization for Node.js Microservices."
 
 ## Files
 ### Project Structure
