@@ -6,33 +6,33 @@ class APIRouter {
   init(rootDir) {
     this.rootDir = path.join(__dirname, rootDir);
     this.routes = [];
+    this.files = [];
   }
 
   getRoutes(rootDir) {
     if (!rootDir) throw new Error('Root directory is required');
-    if (typeof rootDir !== 'string') throw new Error('Root directory must be a string');
+    if (typeof rootDir !== 'string') {
+      throw new Error('Root directory must be a string');
+    }
     if (rootDir) this.init(rootDir);
 
-    const files = [];
-
-    this.traverseDirectory(this.rootDir, files);
-    this.routes = files.map((file) => this.toApiRoute(file));
+    this.traverseDirectory(this.rootDir, this.files);
+    this.routes = this.files.map((file) => this.toApiRoute(file));
     this.addRoutesToRouter(this.routes);
-
     this.logRoutes();
 
     return router;
   }
 
   logRoutes() {
-    const header = `${'METHOD'.padEnd(7)} | ${'HANDLER'.padEnd(30)} | ${'PATH'.padEnd(30)}`;
-    const line = '-'.repeat(header.length);
-    const mapped = this.routes.map(r => `${r.method.toUpperCase().padEnd(7)} | ${r.handler.name.padEnd(30)} | ${r.path.padEnd(30)}`).join('\n');
+    const tableData = this.routes.map((route) => ({
+      METHOD: route.method.toUpperCase(),
+      HANDLER: route.handler.name,
+      PATH: route.path,
+    }));
 
     console.log('< API ROUTES >');
-    console.log(header);
-    console.log(line);
-    console.log(mapped);
+    console.table([...tableData]);
   }
 
   addRoutesToRouter(routes) {
@@ -48,7 +48,8 @@ class APIRouter {
     return {
       method: this.getMethodFromFileName(file),
       path: this.getPathFromFileName(file),
-      handler
+      name : handler?.name || 'anonymous',
+      handler,
     }
   }
 
@@ -65,7 +66,8 @@ class APIRouter {
 
   getPathFromFileName(fileName) {
     const partial = fileName.split('/');
-    const path = partial.slice(0, partial.length - 1).join('/');
+    let path = partial.slice(0, partial.length - 1).join('/');
+    if (path === '') { path = '/'; }
 
     return this.replaceParams(path);
   }
@@ -94,7 +96,10 @@ class APIRouter {
   }
 
   ignoreFile(filePath) {
-    const ignoreFiles = ['index.js', 'package.json', 'package-lock.json', 'README.md', '.DS_Store'];
+    const ignoreFiles = [
+      'index.js', 'package.json', 
+      'package-lock.json', 
+      'README.md', '.DS_Store'];
 
     return ignoreFiles.includes(filePath);
   }

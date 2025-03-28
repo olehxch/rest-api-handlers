@@ -9,7 +9,4 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const improvedRouter = require('./improved-router');
 
 app.use(improvedRouter.getRoutes('./api'));
-
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`)
-});
+app.listen(port, () => console.log(`Server listening on port ${port}`));
