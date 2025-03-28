@@ -1,5 +1,5 @@
 {
-  "name": "microservices-rest-api-routing",
+  "name": "rest-api-handlers",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
