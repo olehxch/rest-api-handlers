@@ -16,7 +16,8 @@
     "prettier-check": "npx prettier --check ./app",
     "prettier-write": "npx prettier --write ./app",
     "circular": "madge --circular ./app",
-    "dep": "npx depcruise app --output-type dot | dot -T svg > ./assets/depgraph.svg",
+    "dep": "npx depcruise src --output-type dot | dot -T svg > ./assets/depgraph.svg",
+    "depng": "npx depcruise src --output-type dot | dot -Gdpi=300 -T png > ./assets/depgraph.png",
     "loc": "npx cloc app"
   },
   "dependencies": {
