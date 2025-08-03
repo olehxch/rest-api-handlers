@@ -1,0 +1,30 @@
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+       8      1     45      0       9 (anonymous)@9-17@frameworks/nest/test/app.e2e-spec.js
+       6      1     27      0       6 (anonymous)@19-24@frameworks/nest/test/app.e2e-spec.js
+       5      1     24      0      20 (anonymous)@6-25@frameworks/nest/test/app.e2e-spec.js
+       4      1     23      0       4 bootstrap@4-7@frameworks/nest/src/main.js
+12 file analyzed.
+==============================================================
+NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
+--------------------------------------------------------------
+     21       6.3     1.0       32.0         3     frameworks/nest/test/app.e2e-spec.js
+     14       0.0     0.0        0.0         0     frameworks/nest/src/satellites/satellite/id/details/satellite-details-full.controller.js
+      7       0.0     0.0        0.0         0     frameworks/nest/src/satellites/satellite/id/details/satellite-details-full.module.js
+     14       0.0     0.0        0.0         0     frameworks/nest/src/satellites/satellite/id/satellite-details.controller.js
+      8       0.0     0.0        0.0         0     frameworks/nest/src/satellites/satellite/id/satellite-details.module.js
+     44       0.0     0.0        0.0         0     frameworks/nest/src/satellites/satellite/satellite.controller.js
+      8       0.0     0.0        0.0         0     frameworks/nest/src/satellites/satellite/satellite.module.js
+      8       0.0     0.0        0.0         0     frameworks/nest/src/satellites/satellites.module.js
+     24       0.0     0.0        0.0         0     frameworks/nest/src/satellites/satellites.controller.js
+      7       4.0     1.0       23.0         1     frameworks/nest/src/main.js
+      6       0.0     0.0        0.0         0     frameworks/nest/src/app.module.js
+      2       0.0     0.0        0.0         0     frameworks/nest/index.js
+
+===============================================================================================================
+No thresholds exceeded (cyclomatic_complexity > 15 or length > 1000 or nloc > 1000000 or parameter_count > 100)
+==========================================================================================
+Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
+------------------------------------------------------------------------------------------
+       163       5.8     1.0       29.8        4            0      0.00    0.00

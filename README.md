@@ -4,16 +4,16 @@
 
 This repository contains source code for the research titled "Enhancing REST API Handlers Organization for Node.js Microservices."
 
-## Files
-### Project Structure
+## Project Structure
 
 The project structure contains:
 
-* **[api-testing](https://github.com/olehxch/rest-api-handlers/tree/master/api-testing)** - this folder contains the source code of the application to test API routes and their performance
-* **[assets](https://github.com/olehxch/rest-api-handlers/tree/master/assets)** - folder with additional images and files
-* **[frameworks](https://github.com/olehxch/rest-api-handlers/tree/master/frameworks)** - this folder contains the source code of the five services with their native routing methods implemented for comparison purposes (Express.js, Koa, Hapi.js, Next.js, Nest.js)
-* **[proposed-approach](https://github.com/olehxch/rest-api-handlers/tree/master/proposed-approach)** - this folder contains the source code of the proposed approach described in the research paper
+- **[assets](./assets)** - Folder with additional images and files
+- **[frameworks](./frameworks)** - This folder contains the source code of the five services with their native routing methods implemented for comparison purposes (Express.js, Koa, Hapi.js, Next.js, Nest.js)
+- **[proposed-approach](./proposed-approach)** - This folder contains the source code of the proposed approach described in the research paper
+- **[proposed-approach-huge](./proposed-approach-huge)** - This folder contains the source code of the proposed approach described in the research paper with 938 API handlers for performance testing
 
+## How to run approaches
 ### How to run an author's proposed approach
 
 Open terminal in the folder `/proposed-approach` folder and run `npm start`. After a successful start a text `Server listening on port 3000` should appear in the console. 
@@ -24,7 +24,7 @@ Open terminal in the folder `/frameworks/express` folder and run `npm start`. Af
 
 ### How to run a Koa native routing approach
 
-Open terminal in the folder `/frameworks/koa` folder and run `npm start`. Application will wait for the network requests C and no logs expected.
+Open terminal in the folder `/frameworks/koa` folder and run `npm start`. Application will wait for the network requests and no logs expected.
 
 ### How to run a Hapi.js native routing approach
 
@@ -38,35 +38,64 @@ Open terminal in the folder `/frameworks/nest` folder and run `npm start`. After
 
 Open terminal in the folder `/frameworks/next` folder. To run a production build execute `npm start`. To run a development build run `npm run dev`. After a successful start a text `Ready in 297ms` should appear in the console. 
 
-### How to test all approaches
-
-Open terminal in the folder `/api-testing` folder and run `npm test` while.
-
-All servers use the same port - `3000`. Please be aware that you need to start one server at a time, test it, and close. Then you can open next server and test it. 
-
 ## Implemented REST API
 
-| METHOD | HANDLER                     | PATH                          |
+| Method | Handler                     | Path                          |
 |--------|-----------------------------|-------------------------------|
-| DELETE | DeleteSatellite             | /satellites/:id               |
-| GET    | GetSatelliteSpecificDetail  | /satellites/:id/details/:detailId |
-| GET    | GetSatelliteDetails         | /satellites/:id/details       |
-| GET    | GetSatellite                | /satellites/:id               |
-| PATCH  | PartialUpdateSatellite      | /satellites/:id               |
-| PUT    | UpdateSatellite             | /satellites/:id               |
-| GET    | ListSatellites              | /satellites                   |
-| POST   | AddSatellite                | /satellites                   |
+| DELETE | DeleteSatellite             | `/satellites/:id`             |
+| GET    | GetSatelliteSpecificDetail  | `/satellites/:id/details/:detailId` |
+| GET    | GetSatelliteDetails         | `/satellites/:id/details`     |
+| GET    | GetSatellite                | `/satellites/:id`             |
+| PATCH  | PartialUpdateSatellite      | `/satellites/:id`             |
+| PUT    | UpdateSatellite             | `/satellites/:id`             |
+| GET    | ListSatellites              | `/satellites`                 |
+| POST   | AddSatellite                | `/satellites`                 |
 
-## Results evaluation
+## Testing
 
-| Framework | Files | Lines of code | Folder Size (MB) | Performance (ms) | Explicit route mapping | Files changed for adding a new route |
-|-----------|-------|---------------|------------------|------------------|------------------------|--------------------------------------|
-| Proposed Approach | 10 | 153 | 229.7 MB | 34.10ms | No | 1 (new route controller) |
-| Express.js | 14 | 96 | 229.7 MB | 38.97ms | Yes | 1 (new route controller)<br>1 (root router)<br>N (index.js files inside folders) |
-| Koa | 14 | 93 | 230.8 MB | 38.12ms | Yes | 1 (new route controller)<br>1 (root router)<br>N (index.js files inside folders) |
-| Hapi.js | 10 | 96 | 2.1 MB | 37.20ms | Yes | 1 (new route controller)<br>1 (root router)<br>N (index.js files inside folders) |
-| Nest.js | 10 | 140 | 298 MB | 41.82ms | Yes | 1 (new route controller)<br>1 (root router)<br>N (index.js files inside folders) |
-| Next.js | 8 | 461 | 451 MB | 38.66ms | Yes | 1 (new route controller) |
+### Code Complexity
+
+1. Open terminal in the root folder
+2. Run the [code_complexity.sh](./code_complexity.sh) file
+
+This file will generate code complexity metrics for each approach. Two files will be generated: `code_complexity.html` and `code_complexity.txt` in the root folders of each framework and approach. Please check `code_complexity.txt` for detailed descriptions.
+
+| Framework        | Average Code Complexity | Explicit Route Mapping | Root Router | New Route Controllers | index.js Files Inside Folders |
+|------------------|-------------------------|-------------------------|-------------|------------------------|-------------------------------|
+| Proposed Approach | 1.0                     | No                      | 0           | 1                      | 0                             |
+| Express.js        | 1.0                     | Yes                     | 1           | 1                      | N                             |
+| Koa               | 1.0                     | Yes                     | 1           | 1                      | N                             |
+| Hapi.js           | 1.0                     | Yes                     | 1           | 1                      | N                             |
+| Nest.js           | 1.0                     | Yes                     | 1           | 1                      | N                             |
+| Next.js           | 1.1                     | Yes                     | 0           | 1                      | 0                             |
+
+### Performance Evaluation
+
+1. Install Python dependencies using [uv](https://docs.astral.sh/uv/) package manager by running command `uv sync`
+2. Open one of the frameworks or proposed approach and start the service by running the command `npm start`. It should start the service at `localhost:3000`
+3. Open terminal in the root folder and run [load_testing.sh](./load_testing.sh) to start load testing – `uv run load_testing.sh`
+4. Open UI available at `http://0.0.0.0:8089` and start the load testing
+5. Use UI navigation to gather additional metrics and review the results
+
+| Framework         | Requests | Fails | Latency, ms (p50) | Latency, ms (p95) | Latency, ms (p99) | Average, ms | Current RPS |
+|------------------|----------|-------|-------------------|-------------------|-------------------|-------------|--------------|
+| Proposed Approach| 1,125,540| 3,836 | 180               | 1000              | 1300              | 388.56      | 5925.1       |
+| Express.js       | 1,266,208| 1,658 | 130               | 770               | 990               | 262.4       | 7458.3       |
+| Koa              | 1,825,937| 0     | 0.07              | 110               | 170               | 16.85       | 13474.8      |
+| Hapi.js          | 1,809,789| 0     | 1                 | 120               | 200               | 21.91       | 13590.6      |
+| Nest.js          | 1,029,060| 5,509 | 190               | 1200              | 1500              | 462.12      | 4940.4       |
+| Next.js          | 493,536  | 37,355| 620               | 16000             | 16000             | 1732.52     | 2457.7       |
+
+### Comparison of CPU and Memory Usage Results
+
+| Framework         | CPU (avg) % | CPU (max) % | Memory (avg) % | Memory (max) % |
+|------------------|-------------|-------------|----------------|----------------|
+| Proposed Approach| 37.05       | 50.70       | 61.28          | 62.90          |
+| Express.js       | 39.16       | 58.60       | 61.02          | 62.40          |
+| Koa              | 36.91       | 75.10       | 61.23          | 63.30          |
+| Hapi.js          | 36.84       | 53.70       | 62.54          | 63.10          |
+| Nest.js          | 37.87       | 55.60       | 61.80          | 63.30          |
+| Next.js          | 38.98       | 51.30       | 62.20          | 63.20          |
 
 ## Dependency Graphs
 

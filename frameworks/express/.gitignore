@@ -41,3 +41,4 @@ npm-debug*
 .todo*
 .logs
 logs
+.dependency-cruiser.js

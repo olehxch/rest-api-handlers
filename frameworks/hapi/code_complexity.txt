@@ -1,0 +1,35 @@
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+       8      1     27      0       8 exports.getDetailById@1-8@frameworks/hapi/app/routes/satellites/satellite/details/id/get.fullSatelliteDetails.controller.js
+       8      1     27      0       8 exports.getSatelliteDetails@1-8@frameworks/hapi/app/routes/satellites/satellite/details/get.satelliteDetails.controller.js
+       8      1     27      0       8 exports.deleteSatellite@1-8@frameworks/hapi/app/routes/satellites/satellite/delete.satellite.controller.js
+       8      1     27      0       8 exports.getSatellite@1-8@frameworks/hapi/app/routes/satellites/satellite/get.satellite.controller.js
+       8      1     27      0       8 exports.updateSatelliteFull@1-8@frameworks/hapi/app/routes/satellites/satellite/put.satellite.controller.js
+       8      1     27      0       8 exports.updateSatellitePartial@1-8@frameworks/hapi/app/routes/satellites/satellite/patch.satellite.controller.js
+       8      1     27      0       8 exports.createSatellite@1-8@frameworks/hapi/app/routes/satellites/post.satellites.controller.js
+       8      1     27      0       8 exports.getSatellites@1-8@frameworks/hapi/app/routes/satellites/get.satellites.controller.js
+       9      1     48      0      11 init@4-14@frameworks/hapi/app/server.js
+      12      1    138      0      14 exports.register@12-25@frameworks/hapi/app/routes.js
+11 file analyzed.
+==============================================================
+NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
+--------------------------------------------------------------
+      8       8.0     1.0       27.0         1     frameworks/hapi/app/routes/satellites/satellite/details/id/get.fullSatelliteDetails.controller.js
+      8       8.0     1.0       27.0         1     frameworks/hapi/app/routes/satellites/satellite/details/get.satelliteDetails.controller.js
+      8       8.0     1.0       27.0         1     frameworks/hapi/app/routes/satellites/satellite/delete.satellite.controller.js
+      8       8.0     1.0       27.0         1     frameworks/hapi/app/routes/satellites/satellite/get.satellite.controller.js
+      8       8.0     1.0       27.0         1     frameworks/hapi/app/routes/satellites/satellite/put.satellite.controller.js
+      8       8.0     1.0       27.0         1     frameworks/hapi/app/routes/satellites/satellite/patch.satellite.controller.js
+      8       8.0     1.0       27.0         1     frameworks/hapi/app/routes/satellites/post.satellites.controller.js
+      8       8.0     1.0       27.0         1     frameworks/hapi/app/routes/satellites/get.satellites.controller.js
+     12       9.0     1.0       48.0         1     frameworks/hapi/app/server.js
+     20      12.0     1.0      138.0         1     frameworks/hapi/app/routes.js
+      1       0.0     0.0        0.0         0     frameworks/hapi/index.js
+
+===============================================================================================================
+No thresholds exceeded (cyclomatic_complexity > 15 or length > 1000 or nloc > 1000000 or parameter_count > 100)
+==========================================================================================
+Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
+------------------------------------------------------------------------------------------
+        97       8.5     1.0       40.2       10            0      0.00    0.00

@@ -14,12 +14,12 @@
     "circular": "madge --circular ./app",
     "dep": "npx depcruise app --output-type dot | dot -T svg > ./assets/depgraph.svg",
     "depng": "npx depcruise app --output-type dot | dot -Gdpi=300 -T png > ./assets/depgraph.png",
-    "loc": "npx cloc app"
+    "loc": "npx cloc app",
+    "cc": "npx cyclomatic-complexity './app/*'"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.23.3",
     "babel": "^6.23.0",
-    "code-complexity": "^4.4.2",
     "dependency-cruiser": "^16.2.0",
     "eslint": "^8.35.0",
     "madge": "^6.0.0",

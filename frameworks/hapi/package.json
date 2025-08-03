@@ -14,13 +14,13 @@
     "circular": "madge --circular ./app",
     "dep": "npx depcruise app --output-type dot | dot -T svg > ./assets/depgraph.svg",
     "depng": "npx depcruise app --output-type dot | dot -Gdpi=300 -T png > ./assets/depgraph.png",
-    "loc": "npx cloc app"
+    "loc": "npx cloc app",
+    "cc": "npx cyclomatic-complexity './app/*'"
   },
   "dependencies": {
     "@hapi/hapi": "^21.3.3"
   },
   "devDependencies": {
-    "code-complexity": "^4.4.4",
     "dependency-cruiser": "^16.2.0",
     "madge": "^6.1.0"
   }

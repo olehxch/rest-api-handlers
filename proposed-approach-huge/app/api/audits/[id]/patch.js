@@ -1,0 +1,12 @@
+module.exports = function PatchAuditsauditsid(req, res) {
+  res.send({
+    command: 'PATCHAuditsauditsid',
+    resource: 'audits',
+    method: 'PATCH',
+    path: '/audits/:id',
+    query: req.query,
+    params: req.params,
+    data: req.body,
+    timestamp: new Date().toISOString()
+  });
+};

@@ -1,0 +1,37 @@
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+       8      1     33      1       8 GetSatelliteSpecificDetail@1-8@frameworks/koa/app/api/satellites/id/details/detailId/get.js
+       8      1     33      1       8 GetSatelliteDetails@1-8@frameworks/koa/app/api/satellites/id/details/get.js
+       8      1     33      1       8 PartialUpdateSatellite@1-8@frameworks/koa/app/api/satellites/id/patch.js
+       8      1     33      1       8 UpdateSatellite@1-8@frameworks/koa/app/api/satellites/id/put.js
+       8      1     33      1       8 DeleteSatellite@1-8@frameworks/koa/app/api/satellites/id/delete.js
+       8      1     33      1       8 GetSatellite@1-8@frameworks/koa/app/api/satellites/id/get.js
+       8      1     33      1       8 AddSatellite@1-8@frameworks/koa/app/api/satellites/post.js
+       8      1     33      1       8 ListSatellites@1-8@frameworks/koa/app/api/satellites/get.js
+15 file analyzed.
+==============================================================
+NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
+--------------------------------------------------------------
+      1       0.0     0.0        0.0         0     frameworks/koa/app/api/satellites/id/details/detailId/index.js
+      8       8.0     1.0       33.0         1     frameworks/koa/app/api/satellites/id/details/detailId/get.js
+      2       0.0     0.0        0.0         0     frameworks/koa/app/api/satellites/id/details/index.js
+      8       8.0     1.0       33.0         1     frameworks/koa/app/api/satellites/id/details/get.js
+      8       8.0     1.0       33.0         1     frameworks/koa/app/api/satellites/id/patch.js
+      8       8.0     1.0       33.0         1     frameworks/koa/app/api/satellites/id/put.js
+      8       8.0     1.0       33.0         1     frameworks/koa/app/api/satellites/id/delete.js
+      5       0.0     0.0        0.0         0     frameworks/koa/app/api/satellites/id/index.js
+      8       8.0     1.0       33.0         1     frameworks/koa/app/api/satellites/id/get.js
+      8       8.0     1.0       33.0         1     frameworks/koa/app/api/satellites/post.js
+      3       0.0     0.0        0.0         0     frameworks/koa/app/api/satellites/index.js
+      8       8.0     1.0       33.0         1     frameworks/koa/app/api/satellites/get.js
+      1       0.0     0.0        0.0         0     frameworks/koa/app/api/index.js
+     17       0.0     0.0        0.0         0     frameworks/koa/app/index.js
+      1       0.0     0.0        0.0         0     frameworks/koa/index.js
+
+===============================================================================================================
+No thresholds exceeded (cyclomatic_complexity > 15 or length > 1000 or nloc > 1000000 or parameter_count > 100)
+==========================================================================================
+Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
+------------------------------------------------------------------------------------------
+        94       8.0     1.0       33.0        8            0      0.00    0.00
