@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository contains source code for the research titled "Enhancing REST API Handlers Organization for Node.js Microservices."
+This repository contains source code for the research titled ["Enhancing REST API Handlers Organization for Node.js Microservices."](https://link.springer.com/article/10.1007/s42979-025-04311-8)
 
 ## Project Structure
 
@@ -116,3 +116,11 @@ This file will generate code complexity metrics for each approach. Two files wil
 
 *Dependency graph for the application based on the Next.js framework:*
 ![Dependency graph for the application based on the Next.js framework](/assets//depgraph-next.png)
+
+## Citation
+
+[Link to citation on Springer](https://link.springer.com/article/10.1007/s42979-025-04311-8#citeas)
+
+```
+Chaplia, O., Klym, H., Konuhova, M. et al. Enhancing REST API Handlers Organization for Node.js Microservices. SN COMPUT. SCI. 6, 776 (2025). https://doi.org/10.1007/s42979-025-04311-8
+```
